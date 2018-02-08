@@ -1,3 +1,3 @@
-class Room < ApplicationRecord
+class Room < ActiveRecord::Base
   has_many :chats
 end
