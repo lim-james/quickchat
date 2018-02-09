@@ -1,0 +1,14 @@
+<h1><%= @room.name %></h1>
+<ul>
+    <% @chats.each do |c| %>
+        <li>
+            <%= c.sender %><br>
+            <b><%= c.content %></b>
+        </li>
+    <% end %>
+</ul>
+<%= form_for @chat do |f| %>
+    <%= @user.name %>
+    <%= f.text_field :content %>
+    <%= f.submit %>
+<% end %>

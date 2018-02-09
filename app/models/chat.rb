@@ -1,5 +1,5 @@
-class Chat < ActiveRecord::Base
-  belongs_to :author
+class Chat < ApplicationRecord
+  belongs_to :room
   
-  validates :content, :name, presence: true
+  validates :content, :sender, presence: true
 end
