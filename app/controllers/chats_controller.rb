@@ -12,6 +12,5 @@ class ChatsController < ApplicationController
     user = User.find session[:user_id]
 
     room.chats.create! sender: user.name, content: params[:chat][:content]
-    redirect_to chats_path
   end
 end
