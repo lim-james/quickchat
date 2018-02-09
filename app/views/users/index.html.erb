@@ -1,14 +1,16 @@
 <h1>
+    <small class= "text-muted">
     <% if @room.chats.count == 0 %>
         Creating
     <% else %>
         Joining
     <% end %>
     <br>
+    </small>
     <%= @room.name %>
 </h1>
 
 <%= form_for @user do |f| %>
-    <%= f.text_field :name, placeholder: "Display name" %>
-    <%= f.submit "Enter" %>
+    <%= f.text_field :name, placeholder: "Display name", class: "form-control form-control-lg" %>
+    <br><%= f.submit "Enter", class: "btn btn-primary btn-lg btn-block" %>
 <% end %>

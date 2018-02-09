@@ -1,11 +1,11 @@
-<h1 id="room" data-id="<%= @room.id %>"><%= @room.name %></h1>
-
-<ul id="chats">
+<h2 id="room" data-id="<%= @room.id %>"><%= @room.name %></h2>
+<hr>
+<ul id="chats" class="list-unstyled">
     <%= render @chats %>
 </ul>
-
+<hr>
 <%= form_for @chat do |f| %>
     <%= @user.name %>
-    <%= f.text_field :content %>
-    <%= f.button "Send", type: :submit, onclick: 'setTimeout(function() { document.getElementById("new_chat").reset(); }, 1);' %>
+    <%= f.text_field :content, class: "form-control", placeholder: "Say something" %>
+    <br><%= f.button "Send", class: "btn btn-primary btn-lg btn-block", type: :submit, onclick: 'setTimeout(function() { document.getElementById("new_chat").reset(); }, 1);' %>
 <% end %>

@@ -1,6 +1,6 @@
 <h1>QUICK<br>CHATS</h1>
 
 <%= form_for @room do |f| %>
-    <%= f.text_field :name, placeholder: "Room name" %>
-    <%= f.submit "Go"%>
+    <%= f.text_field :name, placeholder: "Room name", class: "form-control form-control-lg" %>
+    <br><%= f.submit "Go", class: "btn btn-primary btn-lg btn-block" %>
 <% end %>
