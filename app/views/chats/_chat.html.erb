@@ -1,5 +1,5 @@
 <li class="chat" data-time="<%= chat.created_at.to_i %>">
-    <%= chat.sender %> <%= chat.created_at.time %><br>
+    <%= chat.sender %> <%= chat.created_at.time.strftime("at %I:%M%p") %><br>
     <b><%= chat.content %></b>
 </li>
  
