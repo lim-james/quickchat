@@ -10,6 +10,20 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+    if ($("#chats").length > 0) {
+        setTimeout(updateChats, 1000);
+    }
+})
+
+function updateChats() {
+    var room_id = $("#room").attr("data-id");
+    var after = $(".chat:last-child").attr("data-time");
+    $.getScript("/chats.js?room_id=" + room_id + "&after=" + after)
+    setTimeout(updateChats, 1000);
+}

@@ -1,12 +1,9 @@
-<h1><%= @room.name %></h1>
-<ul>
-    <% @chats.each do |c| %>
-        <li>
-            <%= c.sender %><br>
-            <b><%= c.content %></b>
-        </li>
-    <% end %>
+<h1 id="room" data-id="<%= @room.id %>"><%= @room.name %></h1>
+
+<ul id="chats">
+    <%= render @chats %>
 </ul>
+
 <%= form_for @chat do |f| %>
     <%= @user.name %>
     <%= f.text_field :content %>
